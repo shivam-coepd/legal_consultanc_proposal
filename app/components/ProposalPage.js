@@ -319,21 +319,18 @@ export default function ProposalPage() {
                     </div>
                     <div className="field">
                       <label htmlFor="budget">Approximate Budget *</label>
-                      <select
+                      <input
                         id="budget"
                         name="budget"
+                        type="text"
                         required
+                        placeholder="e.g. ₹50,000 or 50000"
+                        inputMode="decimal"
+                        pattern="[0-9₹,\.\s\-\+\(\)]*"
+                        title="Numbers and currency symbols only"
                         value={formData.budget}
                         onChange={handleChange}
-                      >
-                        <option value="">Select budget</option>
-                        <option>Below ₹25,000</option>
-                        <option>₹25,000–₹40,000</option>
-                        <option>₹40,000–₹60,000</option>
-                        <option>₹60,000–₹1,00,000</option>
-                        <option>Above ₹1,00,000</option>
-                        <option>Need a recommendation</option>
-                      </select>
+                      />
                     </div>
                     <div className="field">
                       <label htmlFor="timeline">How Soon Do You Want to Start? *</label>
